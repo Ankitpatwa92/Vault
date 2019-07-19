@@ -39,3 +39,15 @@ listener "tcp" {
 4.Initilize vault
 ```vault operator init -key-shares=1 -key-threshold=1```
 ~
+
+
+5. Vault Create Kubernates Auth Role
+```
+curl -X POST \
+  http://VAULT_URL/v1/auth/cbx-k8s/login \
+  -H 'Content-Type: application/json' \
+  -d '{	
+	"jwt":"fasdfsd",
+	"role":"service"	
+}'
+```
